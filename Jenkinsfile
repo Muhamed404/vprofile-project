@@ -1,4 +1,4 @@
-pipline {
+pipeline {
     agent any
     tools {
         jdk "JDK17"
@@ -19,7 +19,7 @@ pipline {
     stages {
         stage('Build') {
             steps {
-                sh 'mvn -s setting.xml -DskipTest install'
+                sh 'mvn -s settings.xml -DskipTests install'
             }
         }
     }
