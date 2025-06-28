@@ -4,7 +4,7 @@ pipline {
         jdk "JDK17"
         maven "MAVEN3.9"
     }
-    enviroment {
+    environment {
 
         SNAP_REPO = "vprofile-snapshot"
         NEXUS_USER = "admin"
