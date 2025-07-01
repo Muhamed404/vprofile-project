@@ -66,15 +66,6 @@ pipeline {
         }
         stage ("UploadArtifact") {
             steps {
-                   withCredentials([usernamePassword(
-                        credentialsId: 'nexuslogin-ID',
-                        usernameVariable: 'NEXUS_USER',
-                        passwordVariable: 'NEXUS_PASS')]) {
-
-                    // ✅ Print the username (safe)
-                    echo "Using Nexus user: ${env.NEXUS_USER}"
-                    echo "Using Nexus user: ${env.NEXUS_PASS}"
-                        }
                    nexusArtifactUploader(
                     nexusVersion: 'nexus3',
                     protocol: 'http',
