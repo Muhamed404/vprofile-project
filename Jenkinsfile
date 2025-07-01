@@ -67,7 +67,7 @@ pipeline {
         stage ("UploadArtifact") {
             steps {
                    withCredentials([usernamePassword(
-                        credentialsId: 'nexuslogin',
+                        credentialsId: 'nexuslogin-ID',
                         usernameVariable: 'NEXUS_USER',
                         passwordVariable: 'NEXUS_PASS')]) {
 
@@ -82,7 +82,7 @@ pipeline {
                     groupId: 'QA',
                     version: "${env.BUILD_ID}-${env.BUILD_TIMESTAMP}",
                     repository: "${RELEASE_REPO}",
-                    credentialsId: "nexuslogin",
+                    credentialsId: "nexuslogin-ID",
                     artifacts: [
                       [artifactId: 'vproapp',
                       classifier: '',
